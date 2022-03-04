@@ -1,6 +1,6 @@
 # Sesión 1.A - Algoritmos y Diagramas de Flujo
 
-![Logo CIC](./figures/logo.png)
+![Logo CIC](./figuras/logo.png)
 
     Diplomado de Java - Módulo I
     Departamento de Diplomados y Extensión Académica
