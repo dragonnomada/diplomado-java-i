@@ -51,8 +51,7 @@ Clases y Diagramas de Componentes
     - Introducción a la programación y los Algoritmos
     - Modelado de Algoritmos y Programas en Diagramas de Flujo y Pseudocódigo
 * [B] 
-    - Algoritmos de Ordenamiento y
-Búsqueda
+    - Algoritmos de Ordenamiento y Búsqueda
 
 > Sesión 2
 
