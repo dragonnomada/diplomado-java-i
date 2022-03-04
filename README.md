@@ -24,34 +24,75 @@ Durante el curso el alumno aprenderá los conceptos de forma teoríca y practica
 
 ## Contenido
 
-* Introducción a la programación y los
-Algoritmos
-* Modelado de Algoritmos y Programas
-en Diagramas de Flujo y Pseudocódigo
+* Introducción a la programación y los Algoritmos
+* Modelado de Algoritmos y Programas en Diagramas de Flujo y Pseudocódigo
 * Algoritmos de Ordenamiento y
 Búsqueda
-* Introducción a la Programación
-Orientada a Objetos: Clase, Objeto,
-Atributo, Método
+* Introducción a la Programación Orientada a Objetos: Clase, Objeto, Atributo, Método
 * Modelado de Sistemas en Diagramas de
 Clases y Diagramas de Componentes
-* Introducción a la Tecnología y
-Plataforma Java: Instalación, Versiones,
-ClassPath y Comandos javac y java
-* Elementos fundamentales del lenguaje:
-Variables, Tipos de Datos y Estructuras
-de Control
+* Introducción a la Tecnología y Plataforma Java: Instalación, Versiones, ClassPath y Comandos javac y java
+* Elementos fundamentales del lenguaje: Variables, Tipos de Datos y Estructuras de Control
 * Clases y Objetos, atributos y métodos
 * Constructores y referencias a objetos
-* Principios de encapsulamiento,
-composición, herencia y polimorfismo.
-* Clases finales, abstractas, anónimas,
-interfaces e implementación
+* Principios de encapsulamiento, composición, herencia y polimorfismo.
+* Clases finales, abstractas, anónimas, interfaces e implementación
 * Sobrecarga y redefinición de métodos.
-* El API de Java. Paquete java.lang,
-paquete java.io
-* Excepciones. Manejo de excepciones,
-try-catch, finally, throw y throws,
-excepciones personalizadas
+* El API de Java. Paquete java.lang, paquete java.io
+* Excepciones. Manejo de excepciones, paquete java.io try-catch, finally, throw y throws, excepciones personalizadas
 * Genéricos y Colecciones
 * Manejo de Archivos de Texto y Binarios
+
+## Cronograma
+
+> Sesión 1
+
+* [A] 
+    - Introducción a la programación y los Algoritmos
+    - Modelado de Algoritmos y Programas en Diagramas de Flujo y Pseudocódigo
+* [B] 
+    - Algoritmos de Ordenamiento y
+Búsqueda
+
+> Sesión 2
+
+* [A] 
+    - Introducción a la Programación Orientada a Objetos: Clase, Objeto, Atributo, Método
+    - Modelado de Sistemas en Diagramas de Clases y Diagramas de Componentes
+* [B] 
+    - Introducción a la Tecnología y Plataforma Java: Instalación, Versiones, ClassPath y Comandos javac y java
+    - Elementos fundamentales del lenguaje: Variables, Tipos de Datos y Estructuras de Control
+
+> Sesión 3
+* [A] 
+    - Clases y Objetos, atributos y métodos
+    - Constructores y referencias a objetos
+* [B] 
+    - Principios de encapsulamiento, composición, herencia y polimorfismo.
+
+> Sesión 4
+
+* [A]
+    - Clases finales, abstractas, anónimas, interfaces e implementación
+* [B]
+    - Sobrecarga y redefinición de métodos.
+
+> Sesión 5
+
+* [A]
+    - El API de Java. Paquete java.lang, paquete java.io
+* [B]
+    - Excepciones. Manejo de excepciones, paquete java.io try-catch, finally, throw y throws, excepciones personalizadas
+
+> Sesión 6
+
+* [A]
+    - Genéricos y Colecciones
+* [B]
+    - Manejo de Archivos de Texto y Binarios
+
+> Sesión 7
+
+* [A]
+    - Examen Final
+    - Entrega de Proyectos
