@@ -1,4 +1,4 @@
-# Sesión 1.A - Pseudocódigos y Algoritmos de Búsqueda y Ordenamiento
+# Sesión 1.B - Pseudocódigos y Algoritmos de Búsqueda y Ordenamiento
 
 ![Logo CIC](./figuras/logo.png)
 
@@ -155,7 +155,7 @@ El iterador es una estructura que permite repetir una serie de pasos determinado
 
     SINTAXIS:
 
-    PARA <iterando> <- <valor inicial> HASTA <valor final> CON PASO <valor incremento> ENTONCES
+    PARA <iterando> <- <valor inicial> HASTA <valor final> CON PASO <valor incremento> HACER
         ...
     FINPARA
 
@@ -174,7 +174,7 @@ Los iteradores son útiles para recorrer listas o hacer cálculos determinístic
 
     DEFINIR n COMO entero;
 
-    PARA n <- 1 HASTA N CON PASO 1 ENTONCES
+    PARA n <- 1 HASTA N CON PASO 1 HACER
         suma <- suma + n;
     FINPARA
 
@@ -197,7 +197,7 @@ Los iteradores son útiles para recorrer listas o hacer cálculos determinístic
 
     DEFINIR i COMO entero;
 
-    PARA i <- 3 HASTA N CON PASO 1 ENTONCES
+    PARA i <- 3 HASTA N CON PASO 1 HACER
         c <- a + b;
         a <- b;
         b <- c;
