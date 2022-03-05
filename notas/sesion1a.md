@@ -15,7 +15,9 @@
 
 ## Introducción
 
-    TODO
+En esta primera sesión aprenderemos el uso de los algoritmos y diagramas de flujos. Partiremos de los conceptos de **Información**, **Datos**, **Máquina** y **Programa**, para después formarnos una idea de **Algoritmos** y ponerla en práctica mediante los **Diagramas de Flujo**.
+
+Esto nos permitirá establecer las bases para en próximas sesiones profundizar sobre los **Algoritmos de Búsqueda y Ordernamiento** y poder en el futuro minimizar el esfuerzo en la construcción de aplicaciones.
 
 ## Información y Datos
 
