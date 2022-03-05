@@ -33,7 +33,7 @@ Podemos pensar que las máquinas computadoras, son unidades de procesamiento, ca
 
 ### Ejercicio 1.1
 
-* Piensa en qué tipos de datos podemos obtener de un *Reloj Necánico*.
+* Piensa en qué tipos de datos podemos obtener de un *Reloj Mecánico*.
 * Piensa en qué tipos de datos podemos obtener de un *Cubo de Rubik*.
 
 ## Programas

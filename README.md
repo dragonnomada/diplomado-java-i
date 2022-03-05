@@ -12,6 +12,12 @@ He impartido cursos de Programación Avanzada en múltiples lenguajes de program
 
 ---
 
+## Whatsapp del Diplomado de Java - Módulo I
+
+![Whatsapp QR](./notas/figuras/shared_qr_code.png)
+
+---
+
 ## Introducción
 
 A lo largo de su historia, el *Departamento de Diplomados y Extensión Académica del Centro de Investigación en Cómputo del Instituto Politécnico Nacional* ha impartido diversos cursos y diplomados de especialización.
