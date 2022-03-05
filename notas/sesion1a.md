@@ -171,11 +171,11 @@ Símbolo | Representa | Descripción
 `CAJA` | `Instrucción` | Describe una instrucción, generalmente la declaración o asignación de una variable.
 `ROMBO` | `Condición` | Describe una condición para dividir el flujo en dos posibilidades, de acuerdo si se cumple o no la condición.
 `Prisma` | `Ciclo` | Describe un ciclo dado por una condición o una iteración, recicla el flujo hasta que la condición no se cumpla o la iteración termine y continua el flujo después.
-`Romboide` | `Impresión` | Describe una instrucción de entrada o salida de datos del usuario (generalmente teclado/pantalla).
+`Romboide` | `Salida` | Describe una instrucción de entrada o salida de datos del usuario (generalmente teclado/pantalla).
 `Sillón` | `Impresión` | Describe una instrucción de impresión en pantalla (generalmente un documento/reporte/impresora).
 `Caja Doble` | `Procedimiento` | Describe la instrucción de comenzar un procedimiento o sub-algoritmo anidado.
 `Cilindro` | `Almacenamiento` | Describe la instrucción para guardar o recuperar datos del almacenamiento o archivos.
-`ÓVALO` | `Inicio` | Describe el elemento final del flujo.
+`ÓVALO` | `Fin` | Describe el elemento final del flujo.
 
 > Símbolos de un diagrama de flujo
 
