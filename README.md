@@ -1,4 +1,4 @@
-# Diplomada de Java - Módulo I
+# Diplomado de Java - Módulo I
 
 [![CIC Logo](./notas/figuras/logo.png)](https://www.cic.ipn.mx)
 
