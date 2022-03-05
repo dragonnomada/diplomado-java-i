@@ -217,7 +217,7 @@ El ciclo condicional o estructura *MIENTRAS*, permite repetir una serie de pasos
 
     SINTAXIS:
 
-    MIENTRAS <condición> ENTONCES
+    MIENTRAS <condición> Hacer
         ...
     FINMIENTRAS
 
@@ -233,7 +233,7 @@ Veamos algunos ejemplos.
 
     x <- 0;
 
-    MIENTRAS x <= 0 ENTONCES
+    MIENTRAS x <= 0 Hacer
         IMPRIMIR "Dame un número positivo estricto:";
         LEER x;
     FINMIENTRAS
@@ -248,7 +248,7 @@ Veamos algunos ejemplos.
 
     suma <- 0
 
-    MIENTRAS suma < 500 ENTONCES
+    MIENTRAS suma < 500 Hacer
         suma <- suma + n;
         n <- n * 3
     FINMIENTRAS
