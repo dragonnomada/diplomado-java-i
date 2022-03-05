@@ -5,7 +5,9 @@ Proceso LeerLista
 	Imprimir "Dame el tamaño de la lista:";
 	Leer N;
 	
+	// Define una variable de tipo entero
 	Definir lista Como Entero;
+	// Convierte la variable en una lista de enteros de tamaño N
 	Dimension lista[N];
 	
 	Definir i Como Entero;
@@ -15,6 +17,6 @@ Proceso LeerLista
 		Leer lista[i];
 	FinPara
 	
-	// TODO: SUMAR LO NÚMEROS DE LA LISTA
+	// TODO: SUMAR LO NÚMEROS PARES DE LA LISTA
 	
 FinProceso
