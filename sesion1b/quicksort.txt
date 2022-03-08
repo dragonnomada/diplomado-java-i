@@ -1,0 +1,12 @@
+QUICKSORT(LISTA, N, i, j):
+
+	SI ...
+
+	p <- ...
+
+	SELECCIÓN ...
+
+	QUICKSORT(LISTA, L, l, p)
+
+	QUICKSORT(LISTA, R, p, r)
+

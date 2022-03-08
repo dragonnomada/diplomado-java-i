@@ -217,7 +217,7 @@ El ciclo condicional o estructura *MIENTRAS*, permite repetir una serie de pasos
 
     SINTAXIS:
 
-    MIENTRAS <condición> Hacer
+    MIENTRAS <condición> HACER
         ...
     FINMIENTRAS
 
@@ -248,7 +248,7 @@ Veamos algunos ejemplos.
 
     suma <- 0
 
-    MIENTRAS suma < 500 Hacer
+    MIENTRAS suma < 500 HACER
         suma <- suma + n;
         n <- n * 3
     FINMIENTRAS
@@ -277,7 +277,7 @@ Para encontrar el menor elemento en una lista de números, deberemos recorrer ca
     1. INICIO
     2. N <- TAMAÑO lista_entrada
     3. menor <- lista_entrada[0]
-    4. PARA i <- 0 HASTA N - 1 CON PASO 1 ENTONCES
+    4. PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
         4.1 SI lista_entrada[i] < menor ENTONCES
             4.1.1 menor <- lista_entrada[i]
     5. IMPRIMIR menor
@@ -335,9 +335,9 @@ En una lista ordenada podemos calcular copiar a otra lista de tamaño `K` los pr
     2. N <- TAMAÑO lista_entrada
     3. [ORDENA LA LISTA DE FORMA ASCENDENTE]
     4. DEFINIR lista_k_menores DE DIMENSIÓN K
-    5. PARA i <- 0 HASTA K CON PASO 1 ENTONCES
+    5. PARA i <- 0 HASTA K CON PASO 1 HACER
         5.1 lista_k_menores[i] <- lista_ordenada[i]
-    6. PARA i <- 0 HASTA K CON PASO 1 ENTONCES
+    6. PARA i <- 0 HASTA K CON PASO 1 HACER
         6.1 IMPRIMIR "Menor " i ": " lista_k_menores[i];
     7. FIN
 
@@ -365,10 +365,10 @@ Una variante del algoritmo de búsqueda de los `K-Menores` es el de los `K-Extre
     3. [ORDENA LA LISTA DE FORMA ASCENDENTE]
     4. DEFINIR lista_k_menores DE DIMENSIÓN K
     4. DEFINIR lista_k_mayores DE DIMENSIÓN K
-    5. PARA i <- 0 HASTA K CON PASO 1 ENTONCES
+    5. PARA i <- 0 HASTA K CON PASO 1 HACER
         5.1 lista_k_menores[i] <- lista_ordenada[i]
         5.1 lista_k_mayores[i] <- lista_ordenada[N - 1 - K + i]
-    6. PARA i <- 0 HASTA K CON PASO 1 ENTONCES
+    6. PARA i <- 0 HASTA K CON PASO 1 HACER
         6.1 IMPRIMIR "Menor " i ": " lista_k_menores[i];
         6.1 IMPRIMIR "Mayor " i ": " lista_k_mayores[i];
     7. FIN
@@ -469,7 +469,66 @@ El algoritmo para buscar números consecutivos es útil en algunas áreas como l
 
 ## Ordenamiento de Bubuja
 
-    ...
+El algoritmo burbuja consiste en suponer que los valores dentro de una lista de números son atrapados mediante una burbuja, la cuál subirá cada iteración dejando en cada iteración la burbuja más grande al final de la lista.
+
+El algoritmo recorre en cada iteración cada pareja de números de índices consecutivos, entonces determina intercambiarlos, si el valor siguiente es menor al actual.
+
+    # ORDENAMIENTO BURBUJA
+
+    DEFINIR N COMO ENTERO;
+    
+    IMPRIMIR "Dame el tamaño de la lista a ordenar:";
+    LEER N;
+
+    DEFINIR lista COMO ENTERO;
+    DIMENSION lista[N];
+
+    DEFINIR i COMO ENTERO;
+
+    // Capturamos el valor de cada posición en la lista
+    PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
+
+        IMPRIMIR "Dame el valor de la lista en la posición " i ":";
+        LEER lista[i];
+
+    FINPARA
+
+    DEFINIR burbuja_actual COMO ENTERO;
+    DEFINIR burbuja_siguiente COMO ENTERO;
+
+    DEFINIR j COMO ENTERO;
+
+    // Iteramos N veces, en cada una aseguramos la burbuja más grande al final
+    PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
+
+        // Recorremos cada pareja (actual y siguiente)
+        // desde `0` hasta `N - 2` (las parejas serán [0, 1], [1, 2], ..., [N-2, N-1])
+        PARA j <- 0 HASTA N - 2 CON PASO 1 HACER
+
+            // Recuperamos el valor de la burbuja actual y la siguiente
+            burbuja_actual = lista[j];
+            burbuja_siguiente = lista[j + 1];
+        
+            // Comprobamos si la burbuja actual es mayor a la siguiente
+            SI burbuja_actual > burbuja_siguiente ENTONCES
+
+                // Intercambiamos las burbujas en la lista
+                lista[j] = burbuja_siguiente;
+                lista[j + 1] = burbuja_actual;
+
+            FINSI
+
+        FINPARA
+
+    FINPARA
+
+    // Imprimimos la lista, ahora ordenada
+    PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
+
+        IMPRIMIR lista[i];
+
+    FINPARA
+
 
 ## Ordenamiento de Insersión
 

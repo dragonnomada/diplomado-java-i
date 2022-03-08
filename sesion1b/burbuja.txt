@@ -1,0 +1,15 @@
+PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
+
+	PARA j <- 0 HASTA N - 2 CON PASO 1 HACER
+
+		burbuja_izquierda <- lista[j]
+		burbuja_derecha <- lista[j + 1]
+
+		SI burbuja_izquierda > burbuja_derecha ENTONCES
+			lista[j] <- burbuja_derecha;
+			lista[j + 1] <- burbuja_izquierda;	
+		FINSI
+
+	FINPARA
+
+FINPARA

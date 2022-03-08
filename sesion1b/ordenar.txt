@@ -1,0 +1,29 @@
+ALGORITMO: Ordenar una lista
+
+1. lista_copiada <- CopiarLista(lista_entrada, N)
+2. Definir la lista_ordena del mismo tamaño que lista_entrada
+3. i <- 0
+4. M <- N
+5. indice_menor <- MenorIndice(lista_copiada, M)
+6. valor_menor <- lista_copiada[indice_menor]
+7. lista_ordenada[i] <- valor_menor
+8. lista_copiada[indice_menor] <- lista_copiada[M - 1]
+9. i <- i + 1
+10. M <- M - 1
+11. SI i < N ENTONCES IR A (Paso 5)
+12. REGRESA lista_ordenada
+
+PROCEDIMIENTO:
+
+1. lista_copiada <- CopiarLista(lista_entrada, N)
+2. Definir la lista_ordena del mismo tamaño que lista_entrada
+3. i <- 0
+4. M <- N
+5. MIENTRAS i < N HACER
+	5.1 indice_menor <- MenorIndice(lista_copiada, M)
+	5.2 valor_menor <- lista_copiada[indice_menor]
+	5.3 lista_ordenada[i] <- valor_menor
+	5.4 lista_copiada[indice_menor] <- lista_copiada[M - 1]
+	5.6 i <- i + 1
+	5.7 M <- M - 1
+6. REGRESA lista_ordenada
