@@ -462,6 +462,8 @@ El algoritmo para buscar números consecutivos es útil en algunas áreas como l
         4 >> 11
         14 >> 16
 
+### Ejercicio 2.10
+
 * Genera el algoritmo de los `Consecutivos`.
 * Genera el pseudocódigo del algoritmo de los `Consecutivos`.
 * Genera el diagrama de flujo del algoritmo de los `Consecutivos`.
@@ -526,6 +528,50 @@ El algoritmo recorre en cada iteración cada pareja de números de índices cons
         IMPRIMIR lista[i];
 
     FIN PARA
+
+### Ejercicio 2.11
+
+* Modifica el pseudocódigo para imprimir una tabla como la siguiente para anotar los valores de `i`, `j`, `burbuja_actual` (`ba`), `j + 1`, `burbuja_siguiente` (`bs`), si ocurre el intercambio (`<>`) y la lista al final de la iteración `j`. Llena los valores del resultado de ordenar la lista `[3 2 1 6 5 4 3]`.
+
+> Ejemplo de la tabla al ordenar la lista `[2 1 4 3 5 2]`
+
+`i` | `j` | `ba` | `j + 1` | `bs` | `<>` | `lista`
+--- | --- | --- | --- | --- | --- | ---
+0 | 0 | **2** | 1 | **1** | SI | `[1 2 4 3 5 2]`
+0 | 1 | **2** | 2 | **4** | NO | `[1 2 4 3 5 2]`
+0 | 2 | **4** | 3 | **3** | SI | `[1 2 3 4 5 2]`
+0 | 3 | **4** | 4 | **5** | NO | `[1 2 3 4 5 2]`
+0 | 4 | **5** | 5 | **2** | SI | `[1 2 3 4 2 5]`
+`-` | `-` | `-` | `-` | `-` | `-` | `-` 
+1 | 0 | **1** | 1 | **2** | NO | `[1 2 3 4 2 5]`
+1 | 1 | **2** | 2 | **3** | NO | `[1 2 3 4 2 5]`
+1 | 2 | **3** | 3 | **4** | NO | `[1 2 3 4 2 5]`
+1 | 3 | **4** | 4 | **2** | SI | `[1 2 3 2 4 5]`
+1 | 4 | **4** | 5 | **5** | NO | `[1 2 3 2 4 5]`
+`-` | `-` | `-` | `-` | `-` | `-` | `-` 
+2 | 0 | **1** | 1 | **2** | NO | `[1 2 3 2 4 5]`
+2 | 1 | **2** | 2 | **3** | NO | `[1 2 3 2 4 5]`
+2 | 2 | **3** | 3 | **2** | SI | `[1 2 2 3 4 5]`
+2 | 3 | **3** | 4 | **4** | NO | `[1 2 2 3 4 5]`
+2 | 4 | **4** | 5 | **5** | NO | `[1 2 2 3 4 5]`
+`-` | `-` | `-` | `-` | `-` | `-` | `-` 
+3 | 0 | **1** | 1 | **2** | NO | `[1 2 3 2 4 5]`
+3 | 1 | **2** | 2 | **2** | NO | `[1 2 3 2 4 5]`
+3 | 2 | **2** | 3 | **3** | NO | `[1 2 2 3 4 5]`
+3 | 3 | **3** | 4 | **4** | NO | `[1 2 2 3 4 5]`
+3 | 4 | **4** | 5 | **5** | NO | `[1 2 2 3 4 5]`
+`-` | `-` | `-` | `-` | `-` | `-` | `-` 
+4 | 0 | **1** | 1 | **2** | NO | `[1 2 3 2 4 5]`
+4 | 1 | **2** | 2 | **2** | NO | `[1 2 3 2 4 5]`
+4 | 2 | **2** | 3 | **3** | NO | `[1 2 2 3 4 5]`
+4 | 3 | **3** | 4 | **4** | NO | `[1 2 2 3 4 5]`
+4 | 4 | **4** | 5 | **5** | NO | `[1 2 2 3 4 5]`
+`-` | `-` | `-` | `-` | `-` | `-` | `-` 
+5 | 0 | **1** | 1 | **2** | NO | `[1 2 3 2 4 5]`
+5 | 1 | **2** | 2 | **2** | NO | `[1 2 3 2 4 5]`
+5 | 2 | **2** | 3 | **3** | NO | `[1 2 2 3 4 5]`
+5 | 3 | **3** | 4 | **4** | NO | `[1 2 2 3 4 5]`
+5 | 4 | **4** | 5 | **5** | NO | `[1 2 2 3 4 5]`
 
 
 ## Ordenamiento de Insersión
@@ -592,6 +638,21 @@ El método de ordenamiento por inserción consiste en recorrer cada elemento y p
     PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
         IMPRIMIR lista[i];
     FIN PARA
+
+### Ejercicio 2.12
+
+* Modifica el pseudocódigo para imprimir la lista antes de recorrer los elementos a la derecha y después de hacerlo.
+
+> Ejemplo de la tabla del cambio de listas antes de recorrer a la derecha, para la la lista `[2 1 4 3 5 2]`
+
+`i` | Lista Actual | Lista Siguiente
+--- | --- | ---
+0 | `[2 1 4 3 5 2]` | `[1 2 4 3 5 2]`
+1 | `[1 2 4 3 5 2]` | `[1 2 4 3 5 2]`
+2 | `[1 2 4 3 5 2]` | `[1 2 3 4 5 2]`
+3 | `[1 2 3 4 5 2]` | `[1 2 3 4 5 2]`
+4 | `[1 2 3 4 5 2]` | `[1 2 3 4 5 2]`
+5 | `[1 2 3 4 5 2]` | `[1 2 2 3 4 5]`
 
 ## Ordenamiento de Mezcla (*Mergesort*)
 
@@ -723,6 +784,21 @@ Este algoritmo al ser recursivo requiere de dos piezas. La primera es un subproc
         IMPRIMIR lista[i];
     FIN PARA
 
+### PRÁCTICA 1
+
+* Modifica el pseudocódigo para imprimir la lista antes de ordenar la lista de `l` a `m - 1`, antes de ordenar la lista de `m` a `r`, antes de mezclar la lista de `l`, `m` y `r` y después de la mezcla. Reporta los valores de `l`, `m` y `r`.
+* Explica el funcionamiento del algoritmo con tus propias palabras.
+    - ¿Cómo funciona el subproceso `Mezclar(lista_entrada, l, m, r)`?
+        * ¿Qué representa `l`?
+        * ¿Qué representa `m`?
+        * ¿Qué representa `r`?
+        * ¿Qué hace el subproceso sobre `lista_entrada`?
+    - ¿Cómo funciona el subproceso `Ordenar(lista_entrada, l, r)`?
+        * ¿Qué representa `l`?
+        * ¿Qué representa `m`?
+        * ¿Qué representa `r`?
+        * ¿Qué hace el subproceso sobre `lista_entrada`?
+
 ## Ordenamiento Rápido (*Quicksort*)
 
 El método de ordenamiento rápido es uno de los más populares, debido a que en algunos casos se llega a comportar con orden menor que los otros.
@@ -813,3 +889,22 @@ Al igual que el algoritmo de la mezcla, este funciona recursivamente.
     PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
         IMPRIMIR lista[i];
     FIN PARA
+
+### PRÁCTICA 2
+
+* Modifica el pseudocódigo para imprimir la lista antes de la partición de `l` a `r`, el índice de partición, la lista antes de ordenar de `l` a `indice_particion - 1`, la lista antes de ordenar de `indice_particion + 1` a `r` y la lista después de ordenar esta última.
+* Explica el funcionamiento del algoritmo con tus propias palabras.
+    - ¿Cómo funciona el subproceso `Intercambiar(lista_entrada, i, j)`?
+        * ¿Qué representa `i`?
+        * ¿Qué representa `j`?
+        * ¿Qué hace el subproceso sobre `lista_entrada`?
+    - ¿Cómo funciona el subproceso `indice_menor <- Particion(lista_entrada, l, r)`?
+        * ¿Qué representa `indice_menor`?
+        * ¿Qué representa `l`?
+        * ¿Qué representa `r`?
+        * ¿Qué hace el subproceso sobre `lista_entrada`?
+    - ¿Cómo funciona el subproceso `Ordenar(lista_entrada, l, r)`?
+        * ¿Qué representa `l`?
+        * ¿Qué representa `indice_particion`?
+        * ¿Qué representa `r`?
+        * ¿Qué hace el subproceso sobre `lista_entrada`?
