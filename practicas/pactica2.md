@@ -32,6 +32,8 @@ Deberán crear una carpeta llamada `practica1` que anexe este documento, el docu
 
     Módulo I - Práctica 2
 
+    Profesor: Alan Badillo Salas
+
     << Integrantes >>
 
     [[Nombre Completo]]
