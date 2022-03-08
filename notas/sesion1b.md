@@ -784,20 +784,9 @@ Este algoritmo al ser recursivo requiere de dos piezas. La primera es un subproc
         IMPRIMIR lista[i];
     FIN PARA
 
-### PRÁCTICA 1
+### Ejercicio 2.13
 
-* Modifica el pseudocódigo de **Ordenamiento por Mezcla** para imprimir la lista antes de ordenar la lista de `l` a `m - 1`, antes de ordenar la lista de `m` a `r`, antes de mezclar la lista de `l`, `m` y `r` y después de la mezcla. Reporta los valores de `l`, `m` y `r`.
-* Explica el funcionamiento del algoritmo con tus propias palabras.
-    - ¿Cómo funciona el subproceso `Mezclar(lista_entrada, l, m, r)`?
-        * ¿Qué representa `l`?
-        * ¿Qué representa `m`?
-        * ¿Qué representa `r`?
-        * ¿Qué hace el subproceso sobre `lista_entrada`?
-    - ¿Cómo funciona el subproceso `Ordenar(lista_entrada, l, r)`?
-        * ¿Qué representa `l`?
-        * ¿Qué representa `m`?
-        * ¿Qué representa `r`?
-        * ¿Qué hace el subproceso sobre `lista_entrada`?
+* Resuelve la [Práctica 1](../practicas/pactica1.md)
 
 ## Ordenamiento Rápido (*Quicksort*)
 
@@ -890,21 +879,6 @@ Al igual que el algoritmo de la mezcla, este funciona recursivamente.
         IMPRIMIR lista[i];
     FIN PARA
 
-### PRÁCTICA 2
+### Ejercicio 2.14
 
-* Modifica el pseudocódigo para imprimir la lista antes de la partición de `l` a `r`, el índice de partición, la lista antes de ordenar de `l` a `indice_particion - 1`, la lista antes de ordenar de `indice_particion + 1` a `r` y la lista después de ordenar esta última.
-* Explica el funcionamiento del algoritmo con tus propias palabras.
-    - ¿Cómo funciona el subproceso `Intercambiar(lista_entrada, i, j)`?
-        * ¿Qué representa `i`?
-        * ¿Qué representa `j`?
-        * ¿Qué hace el subproceso sobre `lista_entrada`?
-    - ¿Cómo funciona el subproceso `indice_menor <- Particion(lista_entrada, l, r)`?
-        * ¿Qué representa `indice_menor`?
-        * ¿Qué representa `l`?
-        * ¿Qué representa `r`?
-        * ¿Qué hace el subproceso sobre `lista_entrada`?
-    - ¿Cómo funciona el subproceso `Ordenar(lista_entrada, l, r)`?
-        * ¿Qué representa `l`?
-        * ¿Qué representa `indice_particion`?
-        * ¿Qué representa `r`?
-        * ¿Qué hace el subproceso sobre `lista_entrada`?
+* Resuelve la [Práctica 2](../practicas/pactica2.md)

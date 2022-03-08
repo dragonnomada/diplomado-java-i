@@ -21,15 +21,51 @@ Deberán crear una carpeta llamada `practica1` que anexe este documento, el docu
 
 > Formato del reporte
 
-    INSTITUTO POLITÉCNICO NACIONAL
+    [PORTADA]
+
+    << Título >>
+
+    Diplomado de Java - Módulo I
+    Departamento de Diplomados y Extensión Profesional
+    Centro de Investigación en Cómputo
+    Instituto Politécnico Nacional
+
+    Módulo I - Práctica 1
+
+    << Integrantes >>
+
+    [[Nombre Completo]]
+    [[Correo Electrónico]]
+
+    << Fecha >>
+
+    [ALGORITMO/PSEUDOCÓDIGO MODIFICADO]
+
+    [[Algoritmo/Pseudocódigo Final]]
+
+    [[Capturas de pantalla del funcionamiento]]
+
+    [RESPUESTAS A PREGUNTAS]
+
+    [[Tabla con las listas antes y después de cada cambio]]
+
+    [[Respuestas de las preguntas]]
+
+    <<Conclusiones>>
     
 
 ---
 
 ## Descripción
 
-* Modifica el pseudocódigo de **Ordenamiento por Mezcla** para imprimir la lista antes de ordenar la lista de `l` a `m - 1`, antes de ordenar la lista de `m` a `r`, antes de mezclar la lista de `l`, `m` y `r` y después de la mezcla. Reporta los valores de `l`, `m` y `r`.
-* Explica el funcionamiento del algoritmo con tus propias palabras.
+* [40 puntos] Comenta cada línea el pseudocódigo explicando su funcionamiento en general y en particular.
+* [40 puntos] Modifica el pseudocódigo para imprimir la tabla de las listas: 
+    - Los valores de `l`, `m` y `r`
+    - La lista antes de ordenar la lista de `l` a `m - 1`
+    - La lista antes de ordenar la lista de `m` a `r`
+    - La lista antes de mezclar la lista de `l`, `m` y `r`
+    - La lista después de la mezcla
+* [20 puntos] Explica cómo funciona el algoritmo con tus propias palabras. Y responde las siguientes preguntas.
     - ¿Cómo funciona el subproceso `Mezclar(lista_entrada, l, m, r)`?
         * ¿Qué representa `l`?
         * ¿Qué representa `m`?
@@ -43,7 +79,7 @@ Deberán crear una carpeta llamada `practica1` que anexe este documento, el docu
 
 ---
 
-> Pseudocódigo: **Ordenamiento por Mezcla**
+> Pseudocódigo | **Ordenamiento por Mezcla**
 
     # ORDENAMIENTO POR MEZCLA
 
@@ -125,7 +161,6 @@ Deberán crear una carpeta llamada `practica1` que anexe este documento, el docu
         
         SI l < r ENTONCES
             
-            // Buscamos el índice central m
             DEFINIR m COMO ENTERO;
             
             m <- Redon( (l + r + 1) / 2 );
@@ -152,19 +187,13 @@ Deberán crear una carpeta llamada `practica1` que anexe este documento, el docu
 	
     DEFINIR i COMO ENTERO;
 	
-    // Capturamos el valor de cada posición en la lista
     PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
-		
-        IMPRIMIR "Dame el valor de la lista en la posición " i ":";
+	    IMPRIMIR "Dame el valor de la lista en la posición " i ":";
         LEER lista[i];
-		
-    FIN PARA
+	FIN PARA
 	
-    // COMIENZA ORDENAMIENTO POR MEZCLA
-
     Ordenar(lista, 0, N - 1);
 	
-	// Imprimimos la lista, ahora ordenada
-    PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
+	PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
         IMPRIMIR lista[i];
     FIN PARA
