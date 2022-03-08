@@ -81,7 +81,7 @@ Veamos algunos ejemplos.
 	
 	PARA i <- 0 HASTA 4 CON PASO 1 ENTONCES
 		suma <- suma + lista[i];
-	FINPARA
+	FIN PARA
 	
 	IMPRIMIR "La suma es: " suma;
 
@@ -99,7 +99,7 @@ La estructura condicional sirve para determinar si una serie de pasos serán rea
     
     SI <condición> ENTONCES
         ...
-    FINSI
+    FIN SI
 
 Para construir condiciones podemos realizar comparaciones lógicas, como igualdades o desigualdades, determinar si es mayor, mayor o igual, menor o menor o igual. También podemos unir varios predicados lógicos con conjunciones (`Y`), disyunciones (`O`) o negaciones (`NO`). En la siguiente tabla se resumen algunos símbolos usados.
 
@@ -128,7 +128,7 @@ Veamos algunos ejemplos.
         IMPRIMIR "Es mayor de edad";
 	SINO
 		IMPRIMIR "No es mayor de edad";
-    FINSI
+    FIN SI
 
 > Determinar si `x` está en el intervalo de `[1, 5) o de (10, 15]`
 
@@ -141,7 +141,7 @@ Veamos algunos ejemplos.
         IMPRIMIR "Está en el intervalo";
     SINO
         IMPRIMIR "No está en el intervalo";
-    FINSI
+    FIN SI
 
 ### Ejercicio 2.2
 
@@ -157,7 +157,7 @@ El iterador es una estructura que permite repetir una serie de pasos determinado
 
     PARA <iterando> <- <valor inicial> HASTA <valor final> CON PASO <valor incremento> HACER
         ...
-    FINPARA
+    FIN PARA
 
 Los iteradores son útiles para recorrer listas o hacer cálculos determinísticos. Veamos algunos ejemplos.
 
@@ -176,7 +176,7 @@ Los iteradores son útiles para recorrer listas o hacer cálculos determinístic
 
     PARA n <- 1 HASTA N CON PASO 1 HACER
         suma <- suma + n;
-    FINPARA
+    FIN PARA
 
 > Calcular primeros `N` números de Fibonacci
 
@@ -202,7 +202,7 @@ Los iteradores son útiles para recorrer listas o hacer cálculos determinístic
         a <- b;
         b <- c;
         IMPRIMIR c;
-    FINPARA
+    FIN PARA
 
 ### Ejercicio 2.3
 
@@ -487,11 +487,11 @@ El algoritmo recorre en cada iteración cada pareja de números de índices cons
 
     // Capturamos el valor de cada posición en la lista
     PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
-
         IMPRIMIR "Dame el valor de la lista en la posición " i ":";
         LEER lista[i];
+    FIN PARA
 
-    FINPARA
+    // COMIENZA ORDENAMIENTO BURBUJA
 
     DEFINIR burbuja_actual COMO ENTERO;
     DEFINIR burbuja_siguiente COMO ENTERO;
@@ -511,37 +511,305 @@ El algoritmo recorre en cada iteración cada pareja de números de índices cons
         
             // Comprobamos si la burbuja actual es mayor a la siguiente
             SI burbuja_actual > burbuja_siguiente ENTONCES
-
                 // Intercambiamos las burbujas en la lista
                 lista[j] = burbuja_siguiente;
                 lista[j + 1] = burbuja_actual;
+            FIN SI
 
-            FINSI
+        FIN PARA
 
-        FINPARA
-
-    FINPARA
+    FIN PARA
 
     // Imprimimos la lista, ahora ordenada
     PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
 
         IMPRIMIR lista[i];
 
-    FINPARA
+    FIN PARA
 
 
 ## Ordenamiento de Insersión
 
-    ...
+El método de ordenamiento por inserción consiste en recorrer cada elemento y preguntar si hay un elemento mayor que él detrás, para insertarlo después del que ya no sea mayor.
+
+    # ORDENAMIENTO POR INSERCIÓN
+
+    DEFINIR N COMO ENTERO;
+    
+    IMPRIMIR "Dame el tamaño de la lista a ordenar:";
+    LEER N;
+	
+    DEFINIR lista COMO ENTERO;
+    DIMENSION lista[N];
+	
+    DEFINIR i COMO ENTERO;
+	
+    // Capturamos el valor de cada posición en la lista
+    PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
+        IMPRIMIR "Dame el valor de la lista en la posición " i ":";
+        LEER lista[i];
+    FIN PARA
+	
+    // COMIENZA ORDENAMIENTO POR INSERCIÓN
+	
+    DEFINIR valor COMO ENTERO;
+    DEFINIR posicion COMO ENTERO;
+	
+    DEFINIR j COMO ENTERO;
+    DEFINIR k COMO ENTERO;
+	
+    // Recorremos cada índice en la lista
+    PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
+		
+        // Buscamos la posición dónde insertar el valor del `i-ésimo` elemento
+        valor <- lista[i];
+        posicion <- i;
+		
+        // Comenzamos a buscar un valor mayor a nuestro valor actual
+        PARA j <- 0 HASTA i - 1 CON PASO 1 HACER
+			
+            // Si hay un valor anterior más grande y no es el primero encontrado, entonces
+            SI lista[j] >= valor Y posicion > j ENTONCES
+                // actualizamos la posición donde se debería insertar
+                posicion <- j;
+            FIN SI
+			
+        FIN PARA
+		
+        // Recorremos los elementos a la derecha, desde nuestra posición actual,
+        // hasta la posición donde se debería insertar
+        PARA k <- i HASTA posicion + 1 CON PASO -1 HACER
+            // Recorremos el valor a la derecha
+            lista[k] = lista[k - 1];
+        FIN PARA
+		
+        // Insertamos el valor actual en la posición que le corresponde
+        lista[posicion] = valor;
+		
+    FIN PARA
+	
+	// Imprimimos la lista, ahora ordenada
+    PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
+        IMPRIMIR lista[i];
+    FIN PARA
 
 ## Ordenamiento de Mezcla (*Mergesort*)
 
-    ...
+El algoritmo de mezcla consiste en separar los valores en dos sublistas, izquierda y derecha, las cuales se ordenarán recursivamente, para después mezclarlas de forma ordenada.
+
+Este algoritmo al ser recursivo requiere de dos piezas. La primera es un subproceso proceso que ordene una lista del índice `l` al índice `r`. Y otro subproceso que mezcle los valores desde `l` hasta `r` separados por `m`.
+
+    # ORDENAMIENTO POR MEZCLA
+
+    SUBPROCESO Mezclar (lista_entrada, l, m, r)
+	
+        IMPRIMIR "MEZCLAR (" l " " m " " r ")";
+        
+        DEFINIR Nl COMO ENTERO;
+        DEFINIR Nr COMO ENTERO;
+        
+        Nl <- m - l;
+        Nr <- r - m + 1;
+        
+        IMPRIMIR Nl " " Nr;
+        
+        DEFINIR Ml COMO ENTERO;
+        DEFINIR Mr COMO ENTERO;
+        
+        Ml <- Nl;
+        Mr <- Nr;
+        
+        SI Ml <= 0 ENTONCES
+            Ml <- 1;
+        FIN SI
+        
+        SI Mr <= 0 ENTONCES
+            Mr <- 1;
+        FIN SI
+        
+        DEFINIR lista_izquierda COMO ENTERO;
+        DIMENSION lista_izquierda[Ml];
+        
+        DEFINIR lista_derecha COMO ENTERO;
+        DIMENSION lista_derecha[Mr];
+        
+        DEFINIR i COMO ENTERO;
+        DEFINIR j COMO ENTERO;
+        
+        PARA i <- 0 HASTA Nl - 1 CON PASO 1 HACER
+            lista_izquierda[i] <- lista_entrada[l + i];
+        FIN PARA
+        
+        PARA j <- 0 HASTA Nr - 1 CON PASO 1 HACER
+            lista_derecha[j] <- lista_entrada[m + j];
+        FIN PARA
+        
+        DEFINIR k COMO ENTERO;
+        
+        i <- 0;
+        j <- 0;
+        k <- l;
+        
+        MIENTRAS i < Nl Y j < Nr Y k <= r HACER
+            SI lista_izquierda[i] <= lista_derecha[j] ENTONCES
+                lista_entrada[k] = lista_izquierda[i];
+                i <- i + 1;
+            SINO
+                lista_entrada[k] = lista_derecha[j];
+                j <- j + 1;
+            FIN SI
+            k <- k + 1;
+        FIN MIENTRAS
+        
+        MIENTRAS i < Nl Y k <= r HACER
+            lista_entrada[k] = lista_izquierda[i];
+            i <- i + 1;
+            k <- k + 1;
+        FIN MIENTRAS
+        
+        MIENTRAS j < Nr Y k <= r HACER
+            lista_entrada[k] = lista_derecha[j];
+            j <- j + 1;
+            k <- k + 1;
+        FIN MIENTRAS
+        
+    FIN SUBPROCESO
+
+    SUBPROCESO Ordenar ( lista_entrada, l, r )
+        
+        SI l < r ENTONCES
+            
+            // Buscamos el índice central m
+            DEFINIR m COMO ENTERO;
+            
+            m <- Redon( (l + r + 1) / 2 );
+            
+            Imprimir "L: " l " M: " m " R: " r; 
+            
+            Ordenar(lista_entrada, l, m - 1);
+            
+            Ordenar(lista_entrada, m, r);
+            
+            Mezclar(lista_entrada, l, m, r);
+            
+        FIN SI
+        
+    FIN SUBPROCESO
+
+    DEFINIR N COMO ENTERO;
+    
+    IMPRIMIR "Dame el tamaño de la lista a ordenar:";
+    LEER N;
+	
+    DEFINIR lista COMO ENTERO;
+    DIMENSION lista[N];
+	
+    DEFINIR i COMO ENTERO;
+	
+    // Capturamos el valor de cada posición en la lista
+    PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
+		
+        IMPRIMIR "Dame el valor de la lista en la posición " i ":";
+        LEER lista[i];
+		
+    FIN PARA
+	
+    // COMIENZA ORDENAMIENTO POR MEZCLA
+
+    Ordenar(lista, 0, N - 1);
+	
+	// Imprimimos la lista, ahora ordenada
+    PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
+        IMPRIMIR lista[i];
+    FIN PARA
 
 ## Ordenamiento Rápido (*Quicksort*)
 
-    ...
+El método de ordenamiento rápido es uno de los más populares, debido a que en algunos casos se llega a comportar con orden menor que los otros.
 
-## Ordenamiento Aleatorio (*Randomsort*)
+El ordenamiento consiste en ubicar un pivote (por ejemplo, el último valor de la sublista a ordenar). Luego se intercambiarán todos los elementos respecto a ese pivote. Para al final tener una lista ordenada.
 
-    ...
+Al igual que el algoritmo de la mezcla, este funciona recursivamente.
+
+    # ORDENAMIENTO RÁPIDO
+
+    SUBPROCESO Intercambiar (lista_entrada, i, j)
+        
+        DEFINIR temporal COMO ENTERO;
+        
+        temporal <- lista_entrada[i];
+        lista_entrada[i] <- lista_entrada[j];
+        lista_entrada[j] <- temporal;
+        
+    FIN SUBPROCESO
+
+    SUBPROCESO indice_menor <- Particion (lista_entrada, l, r)
+        
+        DEFINIR pivote COMO ENTERO;
+        
+        pivote <- lista_entrada[r];
+        
+        IMPRIMIR "Particion (" l " " pivote " " r ")";
+        
+        DEFINIR k COMO ENTERO;
+        
+        DEFINIR indice_menor COMO ENTERO;
+        
+        indice_menor <- l - 1;
+        
+        PARA k <- l HASTA r - 1 CON PASO 1 HACER
+            SI lista_entrada[k] < pivote ENTONCES
+                indice_menor <- indice_menor + 1;
+                Intercambiar(lista_entrada, indice_menor, k);
+            FIN SI
+        FIN PARA
+        
+        indice_menor <- indice_menor + 1;
+        
+        Intercambiar(lista_entrada, indice_menor, r);
+        
+    FIN SUBPROCESO
+
+    SUBPROCESO Ordenar (lista_entrada, l, r)
+        
+        SI l < r ENTONCES
+            
+            IMPRIMIR "ORDENAR (" l " " r ")"; 
+            
+            DEFINIR indice_particion COMO ENTERO;
+            
+            indice_particion <- Particion(lista_entrada, l, r);
+            
+            IMPRIMIR l " " indice_particion " " r; 
+            
+            Ordenar(lista_entrada, l, indice_particion - 1);
+            Ordenar(lista_entrada, indice_particion + 1, r);
+            
+        FIN SI
+        
+    FIN SUBPROCESO
+        
+    DEFINIR N COMO ENTERO;
+    
+    IMPRIMIR "Dame el tamaño de la lista a ordenar:";
+    LEER N;
+    
+    DEFINIR lista COMO ENTERO;
+    DIMENSION lista[N];
+    
+    DEFINIR i COMO ENTERO;
+    
+    // Capturamos el valor de cada posición en la lista
+    PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
+        
+        IMPRIMIR "Dame el valor de la lista en la posición " i ":";
+        LEER lista[i];
+        
+    FIN PARA
+    
+    Ordenar(lista, 0, N - 1);
+    
+    // Imprimimos la lista, ahora ordenada
+    PARA i <- 0 HASTA N - 1 CON PASO 1 HACER
+        IMPRIMIR lista[i];
+    FIN PARA

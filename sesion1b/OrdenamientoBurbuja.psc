@@ -17,6 +17,8 @@ Proceso OrdenamientoBurbuja
 		
     FINPARA
 	
+	// COMIENZA ORDENAMIENTO BURBUJA
+	
     DEFINIR burbuja_actual COMO ENTERO;
     DEFINIR burbuja_siguiente COMO ENTERO;
 	
