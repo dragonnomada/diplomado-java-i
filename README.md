@@ -14,7 +14,7 @@ He impartido cursos de Programación Avanzada en múltiples lenguajes de program
 
 ## Introducción
 
-A lo largo de su historia, el *Departamento de Diplomados y Extensión Académica del Centro de Investigación en Cómputo del Instituto Politécnico Nacional* ha impartido diversos cursos y diplomados de especialización.
+A lo largo de su historia, el *Departamento de Diplomados y Extensión Profesional del Centro de Investigación en Cómputo del Instituto Politécnico Nacional* ha impartido diversos cursos y diplomados de especialización.
 
 El **Diplomado en Java** tiene el objetivo de formar nuevos profesionistas que tengan pleno dominio del lenguaje Java y las plataformas empresariales relacionadas. Manteniendo un alto estándar en la calidad del contenido y evaluaciones aplicadas durante los diferentes módulos.
 

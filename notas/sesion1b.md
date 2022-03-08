@@ -3,7 +3,7 @@
 ![Logo CIC](./figuras/logo.png)
 
     Diplomado de Java - Módulo I
-    Departamento de Diplomados y Extensión Académica
+    Departamento de Diplomados y Extensión Profesional
     Centro de Investigación en Cómputo
     Instituto Politécnico Nacional
 
@@ -786,7 +786,7 @@ Este algoritmo al ser recursivo requiere de dos piezas. La primera es un subproc
 
 ### PRÁCTICA 1
 
-* Modifica el pseudocódigo para imprimir la lista antes de ordenar la lista de `l` a `m - 1`, antes de ordenar la lista de `m` a `r`, antes de mezclar la lista de `l`, `m` y `r` y después de la mezcla. Reporta los valores de `l`, `m` y `r`.
+* Modifica el pseudocódigo de **Ordenamiento por Mezcla** para imprimir la lista antes de ordenar la lista de `l` a `m - 1`, antes de ordenar la lista de `m` a `r`, antes de mezclar la lista de `l`, `m` y `r` y después de la mezcla. Reporta los valores de `l`, `m` y `r`.
 * Explica el funcionamiento del algoritmo con tus propias palabras.
     - ¿Cómo funciona el subproceso `Mezclar(lista_entrada, l, m, r)`?
         * ¿Qué representa `l`?

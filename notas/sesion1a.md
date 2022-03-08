@@ -3,7 +3,7 @@
 ![Logo CIC](./figuras/logo.png)
 
     Diplomado de Java - Módulo I
-    Departamento de Diplomados y Extensión Académica
+    Departamento de Diplomados y Extensión Profesional
     Centro de Investigación en Cómputo
     Instituto Politécnico Nacional
 
