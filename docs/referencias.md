@@ -47,6 +47,10 @@
 
 [https://www.lucidchart.com/pages/es/tutorial-de-diagrama-de-clases-uml](https://www.lucidchart.com/pages/es/tutorial-de-diagrama-de-clases-uml)
 
+[https://www.geeksforgeeks.org/unified-modeling-language-uml-class-diagrams/](https://www.geeksforgeeks.org/unified-modeling-language-uml-class-diagrams/)
+
 > Diagramas de componentes
 
 [https://www.ionos.mx/digitalguide/paginas-web/desarrollo-web/diagrama-de-componentes/](https://www.ionos.mx/digitalguide/paginas-web/desarrollo-web/diagrama-de-componentes/)
+
+[https://www.geeksforgeeks.org/component-based-diagram/](https://www.geeksforgeeks.org/component-based-diagram/)
