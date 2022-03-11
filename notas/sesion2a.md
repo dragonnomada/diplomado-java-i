@@ -213,9 +213,67 @@ Con estos diagramas podemos modelar clases, las relaciones entre las clases y la
     - ¿Qué diferencia hay entre las relaciones de asociación y las relaciones de agregación y composición?
     - En una relación de agregación entre la clase primaria y la clase secundaria, ¿Puede existir un objeto de la clase secundaria fuera de la clase primaria?
     - En una relación de composición entre la clase primaria y la clase secundaria, ¿Puede existir un objeto de la clase secundaria fuera de la clase primaria?
-* Crea los diagramas de clases para un sistema de ventas considerando los siguientes puntos y procesos
+* Crea los diagramas de clases para un sistema de ventas considerando los siguientes puntos y procesos.
     - Una venta se refiere a un evento en el cuál hay un monto total vendido, una lista de productos asociados, un acuse para abrir la venta por parte de un vendedor, un acuse para confirmar la venta por parte de un cliente, un acuse para cerrar la venta por parte de un vendedor, un acuse para recibir los productos de la venta por parte de un servicio de entrega, un acuse para confirmar la recepción de los productos entregados por parte de un cliente, un acuse para confirmar la entrega por parte de un vendedor, un acuse para completar la venta por parte del sistema y una guia de transporte para entregar los productos de la venta al servicio de entrega.
     - El vendedor se refiere a un empleado físico o virtual (punto de venta) capaz de firmar los acuses que se le soliciten.
     - El cliente se refiere a un cliente físico o virtual (plataforma de venta) capaz de firmar los acuses que se le soliciten.
     - El servicio de entrega se refiere a una empresa física o virtual (paquetería) capaz de recibir una guía de venta y firmar los acuses que se le soliciten.
 
+## Diagramas de Componentes
+
+Los **Diagramas Componentes** permiten modelar el funcionamiento del sistema a través de procesos y transferencia de datos entre las entidades (generalmente clases).
+
+El componente lo entenderemos como un objeto capaz de entregar datos (`interfaz de oferta`) y capaz de recibir datos (`interfaz de requerimiento`). En estas notas no manejaremos símbolos adicionales como paquetes y demás, a menos que haga falta, y en su momento se explicarán más a detalle.
+
+En la siguiente figura podemos ver los diferentes símbolos que componenen un diagrama de componentes.
+
+> Figura 3.3 - Símbolos de los diagramas de componentes
+
+![Figura 3.3](./figuras/3.3.png)
+
+Los símbolos que utilizaremos son el de **Componente**, el de **Interfaz ofrecida**, la **Interfaz requerida** y el **Puerto**. Los demás símbolos no serán utilizados en estas notas.
+
+El **Componente** representará el objeto que interactua en el sistema.
+
+La **Interfaz ofrecida** será la comunicación o relación de los datos que saldrán del componente y se conectarán hacía otro componente.
+
+La **Interfaz requerida** será la comunicación o relación de los datos que entrarán al componente y desde otro componente.
+
+El **Puerto** será la forma en la que se determinará una salida o entrada de datos.
+
+En la siguiente figura podemos ver un ejemplo de un diagrama de componentes para un sistema de correo electrónico.
+
+> Figura 3.4 - Ejemplo de un diagrama de componentes para un sistema de correo electrónico
+
+![Figura 3.4](./figuras/3.4.png)
+
+Cómo podemos observar en el diagrama existen tres componentes.
+
+1. El administrador del correo
+2. Los correos en la bandeja de entrada
+3. Los correos en la bandeja de salida
+
+Para entender los diagramas de componentes, es importante ejercitar leerlos describiendo las relaciones de oferta y requerimiento entre los componentes. Veamos la explicación leída del ejemplo.
+
+    El [Sistema de Correo] requiere recolectar los datos del correo electrónico que estará administrando, estos datos podrían ser, el correo, la contraseña, el protocolo de mensajería, el nombre del usuario, etc. 
+    
+    El componente [Sistema de Correo] ofrecerá los datos sobre el correo, para poder obtener la lista de correos en la bandeja de entrada y la lista de correos en la bandeja de salida.
+
+    El componente [Bandeja de Entrada] requiere los datos de correo, y quizás datos que permitan filtrar los correos por fecha o búsquedas específicas, esta comunicación permitirá conectar la bandeja de entrada con el sistema de administración de correo y devolverle la lista de correo en la bandeja de entrada.
+
+    El componente [Bandeja de Salida] requiere los datos de correo, y quizás datos que permitan filtrar los correos por fecha o búsquedas específicas, esta comunicación permitirá conectar la bandeja de salida con el sistema de administración de correo y devolverle la lista de correo en la bandeja de salida.
+
+Como podemos observar, la descripción de los tres componentes, permite establecer las relaciones entre los componentes y entender los requerimientos de datos del componente (`Interfaz requerida`) y los datos que ofrece el componente (`Interfaz ofracida`).
+
+De esta manera podremos modelar la trasacción de datos entre componentes y determinar si se podrían reemplazar algunos componentes por otros, sin tener una pérdida de datos y generalidad.
+
+### Ejercicio 3.3
+
+* Responde las siguientes preguntas con tus propias palabras (no usar definiciones de libros, internet o estas mismas notas).
+    - ¿Que representa un `Componente`?
+    - ¿Que representa una `Interfaz Requerida`?
+    - ¿Que representa una `Interfaz Ofrecida`?
+    - ¿Es posible reemplazar un componente por otro y qué necesitaríamos?
+    - ¿Importa de donde vienen los datos de la `Interfaz ofrecida`?
+    - ¿Importa hacía donde van los datos de la `Interfaz requerida`?
+* Diseña el diagrama de componentes para el sistema de ventas propuesto en la sección anterior.
