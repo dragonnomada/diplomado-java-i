@@ -15,6 +15,21 @@
 
 ## Introducción
 
+En esta sesión revisaremos el uso de **pseudocódigos** para modelar soluciones a algoritmos que sean más fáciles de implementar.
+
+También revisaremos los principales algoritmos de *búsqueda* y *ordenamiento*.
+
+Usaremos [PSeInt](http://pseint.sourceforge.net) para poder implementar de forma real los pseudocódigos y generar sus respectivos diagramas de flujo.
+
+En esta sesión se definirán las Prácticas 1 y 2, basadas en los algoritmos de ordenamiento por mezcla y el ordenamiento rápido, respectivamente.
+
+Puedes consultar las prácticas en la siguiente tabla.
+
+Práctica | Tipo de Práctica | Fecha Límite de Entrega
+--- | --- | ---
+[Práctica 1](../practicas/pactica1.md) | En Equipo (1~3) | 25 de abril de 2022
+[Práctica 2](../practicas/pactica2.md) | En Equipo (1~3) | 25 de abril de 2022
+
 ## Pesudocódigos
 
 Hasta ahora hemos descrito algoritmos en forma de texto. Pero definamos algunos operadores comúnes para formar una sintaxis más precisa.
