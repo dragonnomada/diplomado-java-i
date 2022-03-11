@@ -139,4 +139,83 @@ Por ejemplo, un objeto capaz de retener los datos de una persona (atributos de l
     - ¿Para qué serviría una clase que no tenga atributos definidos?
 * Modela tres clases distintas con sus atributos y métodos como en las tablas anteriores.
 
-## 
+## Diagramas de Clases
+
+Los **Diagramas de Clases** nos permiten modelar clases y las relaciones entre otras clases y objetos de forma esquemática. Estos consisten en una serie de símbolos estandarizados para definir correctamente los atributos y nivel de acceso, los métodos con sus parámetros de entrada, la salida esperada y su nivel de acceso. También algunas relaciones de herencia y dependencia de objetos.
+
+En la siguiente figura podemos ver un resumen de estos símbolos para los **Diagramas de Clases UML** (`UML` - Lenguaje de Modelado Unificado).
+
+> Figura 3.1 - Modelado de clases
+
+![Figura 3.1](./figuras/3.1.jpg)
+
+Una clase es modelada como una caja dividida en tres secciones, la primer sección contendrá el nombre de la clase (relacionada a la entidad). La segunda sección describirá una lista de todos los atributos de la clase con el formato `<acceso> <nombre> : <tipo>`, dónde el tipo de dato es algo opcional, pero que lo vuelve más descriptivo. Finalmente en la tercer sección se listarán todos los métodos (o acciones / operaciones) determinadas por la clase sobre los objetos.
+
+> EJEMPLO: Clase MaquinaMoldeadoraTornillos
+
+    +----------------------------------------------------+
+    | MaquinaMoldeadoraTornillos                         |
+    +----------------------------------------------------+
+    | [-] anchoCabeza : Decimal                          |
+    | [-] anchoCuerpo : Decimal                          |
+    | [-] lagoCabeza  : Decimal                          |
+    | [-] largoCuerpo : Decimal                          |
+    | [#] numRanuras  : Entero                           |
+    | [+] tipoCabeza  : Texto                            |
+    +----------------------------------------------------+
+    | [+] obtnerAnchoCabeza  : () -> Decimal             |
+    | [+] obtnerAnchoCuerpo  : () -> Decimal             |
+    | [+] obtnerLagoCabeza   : () -> Decimal             |
+    | [+] obtnerLargoCuerpo  : () -> Decimal             |
+    | [+] obtnerNumRanuras   : () -> Entero              |
+    | [+] obtnerTipoCabeza   : () -> Texto               |
+    | [-] ajustarAnchoCabeza : (anchoCabeza) -> *        |
+    | [-] ajustarAnchoCuerpo : (anchoCuerpo) -> *        |
+    | [-] ajustarLagoCabeza  : (lagoCabeza)  -> *        |
+    | [-] ajustarLargoCuerpo : (largoCuerpo) -> *        |
+    | [-] ajustarNumRanuras  : (numRanuras)  -> *        |
+    | [-] ajustarTipoCabeza  : (tipoCabeza)  -> *        |
+    | [+] describirMáquina   : () -> Texto               |
+    | [#] producirTornillos  : (numTornillos) -> *       |
+    +----------------------------------------------------+
+
+En el diagrama podemos observar la presencia de `[+]`, `[-]` y `[#]` que son los niveles de acceso de los miembros a público, privado y protegido, respectivamente. Estos niveles de acceso se revisarán posteriormente, sin embargo, a grandes rasgos significan que dichos miembros (atributos o métodos) pueden ser accedidos desde fuera del objeto (es público), sólo desde adentro del objeto (es privado) o desde dentro del objeto o algún objeto derivado mediante herencia (está protegido).
+
+> Figura 3.2 - Modelado de relaciones entre clases
+
+![Figura 3.2](./figuras/3.2.png)
+
+Las clases se pueden relacionar mediante **Asociaciones**, que signfica que una clase está asociada a otra (flecha simple `-->`) o heredada (flecha con terminación en triángulo `-->>`). Este tipo de relación se conoce como asociación, ya que indica que una clase puede ser accedida desde otra clase, es decir, un objeto tendrá acceso a los miembros de otra clase, generalmente por herencia o implementación de interfaces o clases abstractas. La diferencia entre una asociación simple (`-->`) y una marcada (`-->>`) será el medio de acceso, que podría significar que desde una clase se accede a otra por relación de algún atributo (asociación simple) o por herencia (asociación marcada).
+
+Otro tipo de relaciones entre las clases se da mediante la relación de **agregación** (flecha con terminación en rombo vacío `--<>`) que significa que la clase posee la referencia a un objeto de otra clase, es decir, la clase primaria (`A`), posee un objeto de la clase secundaria (`B`). Si se desea hacer una operación sobre el objeto de la clase secundaria (`B`) se podría lograr hacer desde la clase primaria (`A`). 
+
+Por ejemplo, supongamos que existe la clase `Venta` y esta tiene la referencia a la clase `Vendedor` y la referencia a la clase `Cliente`, entonces podemos definir una relación de agregación sobre `Venta` hacía `Vendedor` y otra relación de agregación sobre `Venta` hacía `Cliente`. Ya que una venta contiene la referencia a un objeto de `Vendedor` y la referencia hacía algún objeto de `Cliente`.
+
+> EJEMPLO: Relaciones de **Agregación** entre `Venta`, `Vendedor` y `Cliente`
+
+    [Venta] ──<> [Vendedor]
+        └─────<> [Cliente]
+
+También existe otro tipo de relaciones entre clases llamada **composición** (flecha con terminación en rombo relleno `--<+>`), y se da cuando la clase primaria (`A`) es quién creó el objeto de la clase secundaria (`B`), es decir, es el único con la referencia al objeto de la otra clase.
+
+Por ejemplo, cuándo una clase llamda `Paquete` genera un objeto llamado `Acuse` y otro objeto llamado `Guia`, los cuales servirán para enviar el paquete. Entonces, estas relaciones serán de *composición* ya que los objetos serán administrados por la clase `Paquete`, es decir, todo lo que les ocurra al `Acuse` y la `Guia` será a través de `Paquete`. Un objeto `Acuse` no existirá fuera de un `Paquete`, tampoco un objeto `Guia`.
+
+> EJEMPLO: Relaciones de **Composición** entre `Paquete`, `Acuse` y `Guia`
+
+    [Paquete] ──<+> [Acuse]
+        └───────<+> [Guia]
+
+Con estos diagramas podemos modelar clases, las relaciones entre las clases y las relaciones entre sus objetos.
+
+### Ejercicio 3.2
+
+* Responde las siguientes preguntas con tus propias palabras (no usar definiciones de libros, internet o estas mismas notas).
+    - ¿Qué diferencia hay entre las relaciones de asociación y las relaciones de agregación y composición?
+    - En una relación de agregación entre la clase primaria y la clase secundaria, ¿Puede existir un objeto de la clase secundaria fuera de la clase primaria?
+    - En una relación de composición entre la clase primaria y la clase secundaria, ¿Puede existir un objeto de la clase secundaria fuera de la clase primaria?
+* Crea los diagramas de clases para un sistema de ventas considerando los siguientes puntos y procesos
+    - Una venta se refiere a un evento en el cuál hay un monto total vendido, una lista de productos asociados, un acuse para abrir la venta por parte de un vendedor, un acuse para confirmar la venta por parte de un cliente, un acuse para cerrar la venta por parte de un vendedor, un acuse para recibir los productos de la venta por parte de un servicio de entrega, un acuse para confirmar la recepción de los productos entregados por parte de un cliente, un acuse para confirmar la entrega por parte de un vendedor, un acuse para completar la venta por parte del sistema y una guia de transporte para entregar los productos de la venta al servicio de entrega.
+    - El vendedor se refiere a un empleado físico o virtual (punto de venta) capaz de firmar los acuses que se le soliciten.
+    - El cliente se refiere a un cliente físico o virtual (plataforma de venta) capaz de firmar los acuses que se le soliciten.
+    - El servicio de entrega se refiere a una empresa física o virtual (paquetería) capaz de recibir una guía de venta y firmar los acuses que se le soliciten.
+
