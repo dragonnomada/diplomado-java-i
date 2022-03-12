@@ -1,0 +1,23 @@
+PagoBancario
+	id
+	fecha
+	monto
+	tipo
+	cuentaA
+	cuentaB
+
+1. obj1 <- (123, "23/02/2022", $16,537.99, "TRANS", "ABC1234567", "XYZ98876534")
+
+2. obj2 <- (456, "07/03/2022", $5,298.73, "TRANS", "XYZ98876534", "ABC1234567")
+
+...
+
+obj1.getId() <- obtener el id
+
+obj1.setId(765) <- ajustar el id
+
+obj1.notificarA() <- procesa el envio de un correo a la cuentaA
+
+obj1.notificarB()
+
+obj1.montoExcesivo()
