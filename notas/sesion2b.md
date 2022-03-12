@@ -438,7 +438,7 @@ sc.close();
 
     MIENTRAS suma < 500 HACER
         suma <- suma + n;
-        n <- n * 3
+        n <- n + 3
     FINMIENTRAS
 
     IMPRIMIR "Último múltiplo: " n;
@@ -446,7 +446,89 @@ sc.close();
 
 ## Listas Dinámicas (`List` y `ArrayList`)
 
+Una limitación de los arreglos, es que al crearlos reservarán la memoria necesaria para el número de elementos que necesitamos almacenar. Sin embargo, si no estamos seguros cuántos elementos necesitamos, o no queremos reservar tanta memoria de golpe, podemos utilizar las listas dinámicas en lugar de los arreglos.
+
+Una lista dinámica se puede generar mediante la clase `java.util.ArrayList`, la cual es una clase genérica, es decir, una clase asociada a un tipo de objeto genérico, lo cual nos pondrá algunas restricciones.
+
+    SINTAXIS:
+
+    // import java.util.ArrayList;
+
     ...
+    
+    ArrayList<T> <nombre> = new ArrayList<T>();
+
+Como podemos observar el tipo `<T>` puede ser cualquier tipo de objeto, por lo que no podremos crear listas sobre tipos de datos primitivos. Es decir, tenemos la restricción de solo poder almacenar objetos de un tipo no primitivo (alguna clase estándar o definida por el usuario). Afortunadamente tenemos unas clases llamadas las clase de envoltura de los primitivos, que serán equivalentes con los primitivos, de hecho podremos hacer conversiones automáticas.
+
+> Tabla de Clases Envolutura de Primitivos
+
+Clase | Tipo Primitivo | Ejemplo
+--- | --- | ---
+`Integer` | `int` | `Integer edad = 123;`
+`Float` | `float` |  `Float altura = 17.45f;`
+`Double` | `double` | `Double peso = 123.456;`
+`Boolean` | `boolean` | `Boolean activo = false;`
+`String` | - | `String nombre = "Ana Ming";`
+
+Entonces podemos generar listas que almacenen objetos en las posiciones correspondientes. Dada una lista dinámica, podemos acceder a los siguientes métodos de la lista.
+
+> Tabla de Métodos Principales de `ArrayList`
+
+    SUPONER LA LISTA: ArrayList<Persona> personas = new ArrayList<Persona>();
+
+Método | Ejemplo | Descripción
+--- | --- | ---
+`<lista>.add(<elemento>)` | `personas.add(persona)` | Agrega un elemento al final de la lista.
+`<lista>.set(<índice>, <elemento>)` | `personas.set(3, ana)` | Sustituye el `<elemento>` en un `<índice>` dado. (Cuidado con salirse del índice mínimo y máximo)
+`<lista>.get(<índice>)` | `Persona ana = personas.get(3)` | Recupera un `<elemento>` del `<índice>` específicado. (Cuidado con salirse del índice mínimo y máximo)
+`<lista>.size()` | `if (personas.size() < 10) { ... }` | Devuelve un entero con el número de elementos en la lista
+`<lista>.remove(<índice>)` | `personas.remove(0)` | Quita el `<elemento>` en el `<índice>` dado y recorre los elementos. Por ejemplo, si se quita el primer elemento, ahora el segundo elemento sería el primero, el tercero el segundo y así sucesivamente.
+`<lista>.clear()` | Borra todos los elementos al mismo tiempo (vacía la lista).
+`<lista>.remove(<elemento>)` | `personas.remove(ana)` | Si el `<elemento>` se encuentra en la lista quita la primer coincidencia al objeto exacto.
+`<índice>` dado y recorre los elementos. Por ejemplo, si se quita el primer elemento, ahora el segundo elemento sería el primero, el tercero el segundo y así sucesivamente.
+
+> Ejercicio 2b.L1 - Llenar una lista con los primeros `N` números de Fibonacci
+
+```java
+// import java.util.Scanner;
+// import java.util.ArrayList;
+
+Scanner sc = new Scanner(System.in);
+
+int n;
+
+System.out.printf("Dame el límite de números de Fibonacci: ");
+n = sc.nextInt();
+
+ArrayList<Integer> fibonacci = new ArrayList<Integer>();
+
+int a = 1;
+int b = 1;
+int c;
+
+fibonacci.add(a);
+fibonacci.add(b);
+
+while (fibonacci.size() < n) {
+    c = a + b; // actual
+    fibonacci.add(c);
+    a = b;  // penúltimo
+    b = c;  // último
+}
+
+// for (int i = 0; i < fibonacci.size(); i = i + 1) {
+//     int f = fibonacci.get(i);
+//     System.out.printf("%d ", f);
+// }
+
+for (int f : fibonacci) {
+    System.out.printf("%d ", f);
+}
+
+System.out.println();
+
+sc.close();
+```
 
 ---
 
@@ -472,6 +554,8 @@ Netbeans se volvió muy popular por sus capacidades de diseñar interfaces gráf
 
 IntelliJ es un framework muy popular por su gran capacidad de predicción de código, la cuál quizás sea de las mejores, y también por su livianez. Este es uno de los frameworks más ligeros para trabajar con Java, y en las últimas versiones el estilo se asemeja a usar [Visual Code](https://code.visualstudio.com).
 
+Existen dos versiones, una de paga y otra `community`, la cual es gratuita y mantenida por la comunidad.
+
 ![Figura 4.A3](./figuras/4.A3.png)
 
 [https://www.jetbrains.com/es-es/idea/](https://www.jetbrains.com/es-es/idea/)
@@ -484,6 +568,14 @@ Spring Tools es una adaptación de Eclipse, para integrar proyectos de Spring. E
 
 [https://spring.io/tools](https://spring.io/tools)
 
+> Tabla comparativa de Frameworks
+
+Framework | Tamaño | Memoria | Tiempo de Carga
+--- | --- | --- | ---
+Eclipse | ~117mb | - | -
+Netbeans | ~438mb | - | -
+IntelliJ | ~575mb | - | -
+Spring Tools | ~545mb | - | -
 
 ---
 
