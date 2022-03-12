@@ -324,11 +324,9 @@ Los ciclos nos permitirán repetir un bloque de código, mientras la condición 
         <<código ejecutado la primera vez y mientras se cumpla la condición>>
     } while ( <condición> );
 
-## Ejercicios
+### Ejercicios
 
 > Ejercicio 2b.E1 - Sumar dos números enteros
-
-    PSEUDOCÓDIGO:
 
     DEFINIR a COMO entero;
     DEFINIR b COMO entero;
@@ -368,8 +366,6 @@ sc.close();
 
 > Ejercicio 2b.E2 - Sumar los números de una lista de enteros
 
-    PSEUDOCÓDIGO:
-
     DEFINIR lista COMO entero;
     DIMENSION lista[5];
 
@@ -390,3 +386,68 @@ sc.close();
     FIN PARA
 
     IMPRIMIR "La suma es: " suma;
+
+> Ejercicio 2b.E3 - Determinar si `x` está en el intervalo de `[1, 5) o de (10, 15]`
+
+    DEFINIR x COMO real;
+
+    IMPRIMIR "Dame un número:";
+    LEER x;
+
+    SI (x >= 1 Y x < 5) O (x > 10 Y x <= 15) ENTONCES
+        IMPRIMIR "Está en el intervalo";
+    SINO
+        IMPRIMIR "No está en el intervalo";
+    FIN SI
+
+> Ejercicio 2b.E4 - Calcular primeros `N` números de Fibonacci
+
+    DEFINIR N COMO entero;
+
+    IMPRIMIR "Dame N:";
+    LEER N;
+
+    DEFINIR a COMO entero;
+    DEFINIR b COMO entero;
+    DEFINIR c COMO entero;
+
+    a <- 1;
+    b <- 1;
+
+    IMPRIMIR a;
+    IMPRIMIR b;
+
+    DEFINIR i COMO entero;
+
+    PARA i <- 3 HASTA N CON PASO 1 HACER
+        c <- a + b;
+        a <- b;
+        b <- c;
+        IMPRIMIR c;
+    FIN PARA
+
+> Ejercicio 2b.E5 - Sumar los múltiplos de `3` mientras su suma sea menor a `500`
+
+    DEFINIR n COMO entero;
+
+    n <- 3;
+
+    DEFINIR suma COMO entero;
+
+    suma <- 0
+
+    MIENTRAS suma < 500 HACER
+        suma <- suma + n;
+        n <- n * 3
+    FINMIENTRAS
+
+    IMPRIMIR "Último múltiplo: " n;
+    IMPRIMIR "La suma es: " suma;
+
+## Listas Dinámicas (`List` y `ArrayList`)
+
+    ...
+
+---
+
+**RESUELVE LA [PRÁCTICA 3](../practicas/pactica3.md)**
