@@ -450,4 +450,41 @@ sc.close();
 
 ---
 
+## Entornos de Desarrollo para Java (Java IDE)
+
+### Eclipse
+
+Eclipse es uno de los IDEs más populares para el desarrollo en Java, cuenta con herramientas avanzadas de depuración, predicción de código e inspección de clases y objetos. También es muy flexible hacía los plugins de la comunidad y es el más utilizado para adaptarlo a diferentes tipos de frameworks.
+
+![Figura 4.A1](./figuras/4.A1.png)
+
+[https://www.eclipse.org/downloads/](https://www.eclipse.org/downloads/)
+
+### Netbeans
+
+Netbeans se volvió muy popular por sus capacidades de diseñar interfaces gráficas al estlo de Visual Basic y Visual C#, sin embargo, en las versiones posteriores a la 8 perdió esta capacidad y actualmente ya no posee ningua característica que lo posicione arriba de algún otro framework.
+
+![Figura 4.A2](./figuras/4.A2.png)
+
+[https://netbeans.apache.org/download/index.html](https://netbeans.apache.org/download/index.html)
+
+### IntelliJ IDEA
+
+IntelliJ es un framework muy popular por su gran capacidad de predicción de código, la cuál quizás sea de las mejores, y también por su livianez. Este es uno de los frameworks más ligeros para trabajar con Java, y en las últimas versiones el estilo se asemeja a usar [Visual Code](https://code.visualstudio.com).
+
+![Figura 4.A3](./figuras/4.A3.png)
+
+[https://www.jetbrains.com/es-es/idea/](https://www.jetbrains.com/es-es/idea/)
+
+### Spring Tools
+
+Spring Tools es una adaptación de Eclipse, para integrar proyectos de Spring. Es muy útil para compilar rápidamente proyectos de Spring Boot para ofrecer servicios web principalmente.
+
+![Figura 4.A4](./figuras/4.A4.png)
+
+[https://spring.io/tools](https://spring.io/tools)
+
+
+---
+
 **RESUELVE LA [PRÁCTICA 3](../practicas/pactica3.md)**
