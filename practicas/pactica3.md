@@ -1,4 +1,4 @@
-# PRÁCTICA 2
+# PRÁCTICA 3
 
 ![Logo CIC](../notas/figuras/logo.png)
 
@@ -17,7 +17,7 @@
 
 Está práctica puede hacerse individual o en equipo de máximo **tres** integrantes.
 
-Deberán crear una carpeta llamada `practica2` que anexe este documento, el documento de reporte de la práctica con el formato descrito abajo.
+Deberán crear una carpeta llamada `practica3` que anexe este documento, el documento de reporte de la práctica con el formato descrito abajo.
 
 > Formato del reporte
 
