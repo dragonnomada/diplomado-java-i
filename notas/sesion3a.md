@@ -1,4 +1,4 @@
-# Sesión 2.B - Java JDK: Instalación, Compilación y Ejecución
+# Sesión 3.A - Java JDK: Instalación, Compilación y Ejecución
 
 ![Logo CIC](./figuras/logo.png)
 
