@@ -1,4 +1,4 @@
-# Sesión 3.A - Java JDK: Instalación, Compilación y Ejecución
+# Sesión 3.A - Clases, Objetos y Constructores
 
 ![Logo CIC](./figuras/logo.png)
 
