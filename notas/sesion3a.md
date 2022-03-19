@@ -33,6 +33,14 @@ Representan el diseño que tendrán objetos comunes.
     > Las clases abstraen la naturaleza de un sistema
       para modelarlo mediante atributos y métodos.
 
+    SINTAXIS
+
+    <nivel de acceso> class <Nombre> {
+        
+        ... atributos y métodos
+
+    }
+
 > Ejemplo de una clase que representa un Ticket
 
 ```java
@@ -51,12 +59,26 @@ public class Ticket {
 }
 ```
 
+    NOTA: Las clases se tienen que llamar igual que su archivo `.java`
+          y seguir las convenciones de nombrado PascalCase.
+
 ## Atributo
 
 Representa un dato que podrán ser retenidos por un objeto y su nivel de acceso.
 
     > Los atributos estructuran la información de los objetos 
       modelados por la clase.
+
+    SINTAXIS
+
+    <nivel de acceso> class <Nombre> {
+
+        // ATRIBUTOS
+        <nivel de acceso1> <tipo1> <nombre1>;
+        ...
+        <nivel de accesoN> <tipoN> <nombreN>;
+
+    }
 
 > Ejemplo de una clase que retiene el dato de si un Aparato está prendido
 
@@ -82,6 +104,30 @@ Representa una funcionalidad que se puede aplicar el objeto y su nivel de acceso
 
     > Los métodos estructuran las acciones que se le pueden aplicar
       a un objeto, aceptando información extenerna en forma de parámetros.
+
+    SINTAXIS
+
+    <nivel de acceso> class <Nombre> {
+
+        // ATRIBUTOS
+        ...
+
+        // MÉTODOS
+        <nivel de acceso> <tipo de retorno1> <nombre1>([<... paramétros>]) {
+            // CUERPO DEL MÉTODO ...
+            return <valor devuelto>;
+        }
+
+        ...
+
+        <nivel de acceso> <tipo de retornoM> <nombreM>([<... paramétros>]) {
+            // CUERPO DEL MÉTODO ...
+            return <valor devuelto>;
+        }
+
+    }
+
+    <parámetros> ~ <tipo de dato1> <nombre1>, ..., <tipo de dato k> <nombrek>
 
 > Ejemplo de una clase Cafetera con la acción de prepar café
 
@@ -126,6 +172,10 @@ según la clase.
     > Los objetos permiten retener valores específicos en los atributos
       diseñados por la clase y mandar a aplicarles los métodos definidos.
 
+    SINTAXIS
+
+    <Clase> <nombre> = new <Clase>([<parámetros>]);
+
 > Ejemplo de una batalla de Robots
 
 ```java
@@ -135,7 +185,7 @@ public class TestRobots {
         Robot r1 = new Robot();
         Robot r2 = new Robot();
         
-        while (!r1.estaAniquilado() && !r2.estaAniquilado()) {
+        while (!r1.estaAniquilado() || !r2.estaAniquilado()) {
             r1.mover();
             r2.mover();
             r1.atacar();
@@ -146,3 +196,49 @@ public class TestRobots {
 }
 ```
 
+> Ejemplo hacer una venta e imprimir el ticket
+
+```java
+public class SistemaOperando {
+    
+    public static void main(String[] args) {
+        
+            Venta venta = new Venta();
+            
+            venta.abrir();
+            
+            Articulo a1 = Articulo.buscar("Coca Cola").primero();
+            
+            if (!a1.estaBloqueado() && a1.obtenerExistencias() > 0) {
+                String nombre1 = a1.obtenerNombre();
+                a1.reservar();
+                venta.agregarArticulo(a1);
+                a1.bloquear();
+            }
+
+            Articulo a2 = Articulo.buscar("Gansito").primero();
+    
+            if (!a2.estaBloqueado() && a2.obtenerExistencias() > 0) {
+                a2.reservar();
+                venta.agregarArticulo(a2);
+                a2.bloquear();
+            }
+            
+            double total = venta.calcularTotal();
+            
+            double cambio = venta.realizarPago(total + 50);
+            
+            Ticket ticket = venta.obtenerTicket();
+            
+            ticket.imprimir();
+            
+            if (!ticket.sePudoImprimir()) {
+                venta.cerrar("REIMPRIMIR");
+            } else {
+                venta.cerrar("EXITOSA");
+            }
+        
+    }
+    
+} 
+```

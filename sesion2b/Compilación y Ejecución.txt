@@ -1,0 +1,11 @@
+1. Compilar la clase Hola.java
+	
+	javac Hola.java
+
+	>>> Hola.class
+
+2. Ejecutar la clase compilada Hola.class
+
+	java Hola
+
+	>>> "Hola Java :D\n"
