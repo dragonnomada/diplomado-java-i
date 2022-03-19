@@ -242,3 +242,35 @@ public class SistemaOperando {
     
 } 
 ```
+
+## Constructores
+
+Los constructores son métodos especiales que nos permitirán inicializar nuestro atributos, recibiendo los parámetros
+de construcción.
+
+    > Los constructores se llaman igual que la clase y a diferencia de los métodos no marcan un tipo de retorno.
+
+    SINTAXIS
+
+    <nivel de acceso> class <Nombre> {
+
+        // ATRIBUTOS ...
+
+        <nivel de acceso> <Nombre>([<... parámetros>]) {
+            ... TODO: Inicializar todos los atributos en sus valores por iniciales
+        }
+
+        // MÉTODOS ...
+
+    }
+
+    OBSERVACIÓN
+
+    > Cuando usamos la palabra `new` el constructor es el primer método en ser llamado
+    > Podemos tener más de un constructor sobrecargado
+    
+    EJEMPLO
+
+    <Clase> <nombre> = new <Clase>(<... parámetros>);
+
+    <nombre> -> sería el objeto ya inicializado
