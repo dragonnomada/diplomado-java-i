@@ -1,2 +1,6 @@
-package PACKAGE_NAME;public class Robot2D {
+public class Robot2D {
+
+    int x;
+    int y;
+
 }
