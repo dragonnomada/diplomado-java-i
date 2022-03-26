@@ -3,10 +3,10 @@ public class Venta implements IPagable {
     int id;
     Cliente cliente;
     Vendedor vendedor;
-    Vendible[] productos;
+    Producto[] productos;
     Pago pago;
 
-    public Venta(int id, Cliente cliente, Vendedor vendedor, Vendible[] productos, Pago pago) {
+    public Venta(int id, Cliente cliente, Vendedor vendedor, Producto[] productos, Pago pago) {
         this.id = id;
         this.cliente = cliente;
         this.vendedor = vendedor;
@@ -29,7 +29,7 @@ public class Venta implements IPagable {
     }
 
     @Override
-    public Vendible[] getProductos() {
+    public Producto[] getProductos() {
         return productos;
     }
 

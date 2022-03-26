@@ -1,10 +1,10 @@
-public class Vendible implements IVendible {
+public class Producto implements IVendible {
 
     int id;
     double precio;
     int existencias;
 
-    public Vendible(int id, double precio, int existencias) {
+    public Producto(int id, double precio, int existencias) {
         this.id = id;
         this.precio = precio;
         this.existencias = existencias;

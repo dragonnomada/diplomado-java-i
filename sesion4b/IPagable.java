@@ -2,7 +2,7 @@ public interface IPagable {
 
     int getId();
     Cliente getCliente();
-    Vendible[] getProductos();
+    Producto[] getProductos();
 
 }
 
