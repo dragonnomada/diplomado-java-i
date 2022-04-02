@@ -62,10 +62,52 @@
 
 ## El juego de la Catafixia
 
-
+1. Crea una clase llamada `Catafixia`
+   1. Coloca un atributo entero llamado `cuartoPremio` 
+   2. En un constructor vacío 
+      1. Inicializa `cuartoPremio` con un valor aleatorio entre `1` y `3`
+   3. Genera un método llamado `void abrirCuarto(int cuarto)`
+      1. Si el cuarto es igual que el cuarto del premio
+         1. Pregunta al usuario si está seguro o quiere cambiar de catafixia (usa `Scanner`)
+         2. Si el usuario se mantiene seguro muestra el mensaje "GANASTE"
+         3. Sino muestra el mensaje "LOS OTROS CUARTOS ESTÁN VACÍOS, PERDISTE"
+      2. Si el cuarto es diferente del premio
+         1. Muestra el mensaje "ESTE CUARTO ESTÁ VACÍO, PERO TIENES OTRA OPORTUNIDAD"
+         2. Lee una nueva oportunidad para el usuario
+         3. Si el cuarto es igual que el cuarto del premio
+            1. Pregunta al usuario si está seguro o quiere cambiar de catafixia (usa `Scanner`)
+            2. Si el usuario se mantiene seguro muestra el mensaje "GANASTE"
+            3. Sino muestra el mensaje "LOS OTROS CUARTOS ESTÁN VACÍOS, PERDISTE"
 
 ## El juego del Gato
 
+1. Diseña la clase `Gato` con una matriz de `3x3`
+   1. Diseña los métodos necesarios para tirar un `O` o `X` en una posición dada
+   2. Diseña el método que evalue si gana `O`
+   3. Diseña el método que evalue si gana `X`
+
 ## El juego del Monopoli
 
+1. Diseña la clase `Monopoli` que debería tener las siguientes características
+   1. Se debe componer una lista de casillas de tamaño `N`
+   2. Una casilla debería ser la clase `Casilla`
+   3. La clase `Casilla` debe tener los atributos `jugador` de la clase `Jugador`
+      1. También si está ocupada
+      2. El costo por estar en esa casilla
+      3. Y un método llamado `cobrarJugador(jugador)` que al caer en la casilla le descuente dinero
+   4. La clase `Jugador` debe tener un atributo de dinero y un método para descontar
+   5. La clase `Monopoli` debe tener un método `tirar(jugador)`
+      1. Buscar el jugador en la casilla
+      2. Tirar los dados
+      3. Moverlo a otra casilla
+      4. Si el jugador ya no tiene dinero, quitarlo del tablero (ya no meterlo a otra casilla)
+      5. Considera las condiciones en caso que el jugador ya no esté en ninguna casilla
+      
 ## El juego de Serpientes y Escaleras
+
+1. Diseña la clase `Serpientes y Escaleras`
+   1. ¿Qué atributos tiene?
+   2. ¿Qué otras clases se necesitan?
+   3. ¿Cómo puede un jugador tirar y avanzar de una casilla a otra?
+   4. ¿Cómo podemos avanzar o retroceder al jugador si la casilla tiene una serpiente o escalera?
+   5. ¿Cómo definimos las serpientes o escaleras?
