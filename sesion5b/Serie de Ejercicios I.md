@@ -83,6 +83,7 @@
 1. Crear una variable decimal `x = 2000.0`
    1. Repetir imprimir `x`
    2. Dividir a `x` entre `1.1`
+   3. Mientras la `x` sea mayor `1`
 2. Calcular el interés anual para un monto inicial de `4,600` con interés del `2%` mensual.
    1. Calcular cuántos meses pasarán para que el interés sea equivalente a los `4,600`
 
