@@ -1,0 +1,53 @@
+Clase Entidad > Subclase Entidad
+	- Cliente > ClienteRechazado
+	- Vendedor > VendedorRuta
+	- Venta > VentaRuta
+	- Pago > PagoEnLinea > PagoTransferencia
+	- Tienda
+	- Distribuidor
+	- Repartidor
+	- Chofer
+	- Pedido
+	- Paquete
+
+Clase Componente > Subclase Componente
+	- RegistrarCliente > RegistrarClienteVIP
+	- RegistrarProducto > RegistrarLibro
+	- IngresarPaqueteInventario
+	- RetirarPaqueteInventario
+	- LevantarPedido
+	- AgregarProductoPedido
+	- GenerarOrdenEntrega
+	- CobrarPedido
+	- PagarPedido
+	- EntregarPedidoARepartidor
+	- EntregarPedidoDeRepartidorACliente
+	- ConfirmarRecepcionPedido
+
+Interfaz Requerida
+	- ICliente
+		* getId()
+		* getNombre()
+		* getDireccion()
+	- IProducto
+		* getId()
+		* getDescripcion()
+		* getPrecio()
+Interfaz Ofrecida
+	- IComprobantePago
+		* getId()
+		* getCadenaPago()
+		* getMontoPagado()
+		* getImporteSinIva()
+		* getImporteConIva()
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+// Operador ternario (operador condicional)
+// <condición> ? <expresión verdadera> : <expresión falsa>
+
+int a = 1;
+int b = 5;
+
+int mayor = a > b ? a : b;
+
+int menor = a < b ? a : b;
