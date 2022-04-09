@@ -19,18 +19,23 @@ public class Test1 {
         System.out.printf("Se puede leer? %B\n", file.canRead());
 
         try {
-            Scanner scanner = new Scanner(file);
+            Scanner scanner = new Scanner(file); // Puede provocar un error: FileNotFoundException
 
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                System.out.println(line);
+            while (scanner.hasNextLine()) { // Mientras haya una siguiente línea
+                String line = scanner.nextLine(); // Recupera la siguiente línea
+                System.out.println(line); // Imprime la línea en la salida estándar
             }
 
-            scanner.close();
+            scanner.close(); // Cierra el scanner sobre el archivo
         } catch (FileNotFoundException e) {
+            // En caso de que ocurra un FileNotFoundException, informa al usuario, sin romper el programa
             System.out.printf("El archivo no existe: %s\n", e.getMessage());
         } catch (Exception e) {
+            // En caso de que ocurra otra excepción, informa al usuario, sin romper el programa
             System.out.printf("Surgió un error inesperado: %s", e.getMessage());
+        } finally {
+            // Se ejecuta siempre: si sale bien el try o si cae en algún catch
+            System.out.println("Fin del programa");
         }
 
     }
