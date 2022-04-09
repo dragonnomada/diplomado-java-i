@@ -1,15 +1,15 @@
 import java.io.*;
 
-public class TestFileInputStream {
+public class TestFileInputAndOutputStream {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
         // file1.isFile() | file1.exists() | file1.canRead() | file1.canWrite() | file1.canWrite() | ...
 
-        File file1 = new File("C:\\test\\logo.jpg");
+        File file1 = new File("C:\\test\\logo.jpg"); // -->> DESCRIPTOR DEL ARCHIVO 1
         FileInputStream fin = new FileInputStream(file1); // FileNotFoundException
 
-        File file2 = new File("C:\\test\\logo_copia.jpg");
+        File file2 = new File("C:\\test\\logo_copia.jpg"); // -->> DESCRIPTOR DEL ARCHIVO 2
         FileOutputStream fout = new FileOutputStream(file2); // FileNotFoundException
 
         int contador = 0;
